@@ -1,0 +1,14 @@
+<header class="bg-stone-900 px-20 py-10">
+	<div class="flex justify-between items-center">
+		<h1><%= link_to "Honne", root_path, class:"text-white text-5xl"%></h1>
+		<nav>
+			<ul class="flex">
+				<li class="text-white ml-7 text-lg"><%= link_to "Sign Up", signup_path %></li>
+				<li class="text-white ml-7 text-lg"><%= link_to "Log In", login_path %></li>
+				<li class="text-white ml-7 text-lg"><%= link_to "Log Out", current_user%></li>
+				<li class="text-white ml-7 text-lg"><%= link_to "Profile", logout_path%></li>
+				<li class="text-white ml-7 text-lg"><%= link_to "All users", users_path %></li>
+			</ul>
+		</nav>
+	</div>
+</header>
