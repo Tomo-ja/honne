@@ -1,22 +1,23 @@
-<div id="<%= dom_id user %>">
+<% if action_name == "show" %>
+    <div id="<%= dom_id user %>" class="w-1/2 mx-auto">
+  <% else %>
+    <div id="<%= dom_id user %>" class="w-1/3">
+  
+<% end %>
+
   <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
+    <strong class="font-medium">Name:</strong>
     <%= user.name %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Email:</strong>
+    <strong class="font-medium">Email:</strong>
     <%= user.email %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Password digest:</strong>
-    <%= user.password_digest %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Remember digest:</strong>
-    <%= user.remember_digest %>
+    <strong class="font-medium">Password:</strong>
+    <%= user.password %>
   </p>
 
   <% if action_name != "show" %>

@@ -23,15 +23,19 @@
 
   <div class="mb-5 flex items-center">
     <div class="w-5/12 text-right pr-7"><%= form.label :password %></div>
-    <%= form.text_field :password, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2" %>
+    <%= form.password_field :password, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2" %>
   </div>
 
   <div class="mb-5 flex items-center">
-    <div class="w-5/12 text-right pr-7"><%= form.label :password_confimation %></div>
-    <%= form.text_field :password_confirmation, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2" %>
+    <div class="w-5/12 text-right pr-7"><%= form.label :password_confirmation %></div>
+    <%= form.password_field :password_confirmation, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2" %>
   </div>
 
   <div class="inline-block mb-5">
-    <%= form.submit "Create my account", class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer hover:bg-blue-800" %>
+  <% if action_name == "new" %>
+      <%= form.submit "Create my account", class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer hover:bg-blue-800" %>
+    <% else %>
+      <%= form.submit "Update my account", class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer hover:bg-blue-800" %>
+  <% end %>
   </div>
 <% end %>
