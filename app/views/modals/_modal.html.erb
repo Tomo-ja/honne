@@ -1,0 +1,32 @@
+<div id="<%= dom_id modal %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">User:</strong>
+    <%= modal.User %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= modal.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Email:</strong>
+    <%= modal.email %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Password digest:</strong>
+    <%= modal.password_digest %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Remember digest:</strong>
+    <%= modal.remember_digest %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this modal", modal, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this modal', edit_modal_path(modal), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
