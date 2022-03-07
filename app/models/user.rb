@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+	has_many :microposts, foreign_key: "reference_id", dependent: :destroy
 	validates(:name, presence: true, length: {minimum:2, maximum:25})
 	validates(:email, presence: true, length: {minimum:5, maximum:244})
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

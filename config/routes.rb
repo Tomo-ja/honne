@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
 
+  get '/login', to: 'session#new'
   get '/signup', to: 'users#new'
   get '/profile', to: 'users#show'
   resources :users
