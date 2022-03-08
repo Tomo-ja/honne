@@ -3,11 +3,14 @@
 		<h1><%= link_to "Honne", root_path, class:"text-white text-5xl"%></h1>
 		<nav>
 			<ul class="flex">
-				<li class="text-white ml-7 text-lg"><%= link_to "Sign Up", signup_path %></li>
-				<li class="text-white ml-7 text-lg"><%= link_to "Log In", login_path %></li>
+				<% if logged_in? %>
+					<li class="text-white ml-7 text-lg"><%= link_to "Log Out", logout_path%></li> 
+					<li class="text-white ml-7 text-lg"><%= link_to "Profile", profile_path%></li>
+				<% else %>
+					<li class="text-white ml-7 text-lg"><%= link_to "Sign Up", signup_path %></li>
+					<li class="text-white ml-7 text-lg"><%= link_to "Log In", login_path %></li>
+				<% end %>
 				<%# need to create current user helper %>
-				<li class="text-white ml-7 text-lg"><%= link_to "Log Out", logout_path%></li> 
-				<li class="text-white ml-7 text-lg"><%= link_to "Profile", profile_path%></li>
 				<li class="text-white ml-7 text-lg"><%= link_to "All users", users_path %></li>
 			</ul>
 		</nav>

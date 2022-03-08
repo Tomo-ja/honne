@@ -8,11 +8,13 @@ class SessionController < ApplicationController
 			login user
 			redirect_to user
 		else
-			flsh
+			flash.now[:danger] = "Invaild email/password conbination"
+			render 'new'
 		end
 	end
 
 	def destroy
-
+		log_out if logged_in?
+		redirect_to root_path
 	end
 end
