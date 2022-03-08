@@ -1,18 +1,17 @@
-<div id="<%= dom_id micropost %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Content:</strong>
+<div id="<%= dom_id micropost %>" style="background: <%= micropost.backcolor %>">
+  <p class="my-5 text-white">
     <%= micropost.content %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Backcolor:</strong>
-    <%= micropost.backcolor %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">User:</strong>
     <%= micropost.user_id %>
   </p>
+  <% if micropost.user_id == current_user.id%>
+    <%= link_to 'Edit this micropost', edit_micropost_path(micropost), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+  <% else %>
+    <%= link_to "Show this micropost", micropost, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  <% end %>
 
   <% if action_name != "show" %>
     <%= link_to "Show this micropost", micropost, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>

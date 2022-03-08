@@ -12,19 +12,13 @@
   <% end %>
 
   <div class="my-5">
-    <%= form.label :content %>
-    <%= form.text_area :content, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.text_area :content, rows: 12, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 mx-auto text-center w-1/2 text-xl", placeholder: "Tell us your mind here" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :backcolor %>
-    <%= form.text_field :backcolor, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.select :backcolor, [["red", "red"], ["blue", "blue"], ["green", "green"], ["pink", "pink"]], include_blank: "choose one color for post's background" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
 
   <div class="inline">
     <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>

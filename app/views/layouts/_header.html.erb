@@ -5,7 +5,7 @@
 			<ul class="flex">
 				<% if logged_in? %>
 					<li class="text-white ml-7 text-lg"><%= link_to "Log Out", logout_path%></li> 
-					<li class="text-white ml-7 text-lg"><%= link_to "Profile", profile_path%></li>
+					<li class="text-white ml-7 text-lg"><%= link_to "Profile", current_user%></li>
 				<% else %>
 					<li class="text-white ml-7 text-lg"><%= link_to "Sign Up", signup_path %></li>
 					<li class="text-white ml-7 text-lg"><%= link_to "Log In", login_path %></li>
