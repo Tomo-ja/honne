@@ -19,6 +19,9 @@
     <%= form.select :backcolor, [["red", "red"], ["blue", "blue"], ["green", "green"], ["pink", "pink"]], include_blank: "choose one color for post's background" %>
   </div>
 
+  <div class="my-5">
+    <%= form.select :category, [["study", "study"], ["love", "love"], ["question", "question"], ["soliloquy", "soliloquy"]], include_blank: "choose one color category for your post" %>
+  </div>
 
   <div class="inline">
     <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>

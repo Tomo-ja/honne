@@ -1,0 +1,7 @@
+<%= render 'shared/new_post_btn' %>
+<%= render 'shared/category_nav' %>
+<%= paginate @microposts %>
+<div class="flex flex-wrap justify-center">
+	<%= render @microposts %>
+</div>
+<%= paginate @microposts %>
