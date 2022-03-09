@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get '/logout', to: 'session#destroy'
   
   get '/signup', to: 'users#new'
+
+  get '/create_post', to: 'microposts#new'
+
   resources :users
   resources :microposts, only:[:show, :new, :edit, :create, :destroy, :update]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
