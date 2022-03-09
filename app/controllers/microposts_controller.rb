@@ -3,6 +3,8 @@ class MicropostsController < ApplicationController
 
   # GET /microposts/1 or /microposts/1.json
   def show
+    @user = current_user
+    @micropost = Micropost.find_by(id: params[:id])
   end
 
   # GET /microposts/new
@@ -20,8 +22,7 @@ class MicropostsController < ApplicationController
 
     respond_to do |format|
       if @micropost.save
-        format.html { redirect_to micropost_url(@micropost), notice: "Micropost was successfully created." }
-        format.json { render :show, status: :created, location: @micropost }
+        format.html { redirect_to root_url }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @micropost.errors, status: :unprocessable_entity }
