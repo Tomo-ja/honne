@@ -15,10 +15,6 @@
     <%= user.email %>
   </p>
 
-  <p class="my-5">
-    <strong class="font-medium">Password:</strong>
-    <%= user.password %>
-  </p>
 
   <% if action_name != "show" %>
     <%= link_to "Show this user", user, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>

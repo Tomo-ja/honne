@@ -3,8 +3,13 @@
     <p><%= micropost.content %></p>
   </div>
 
-  <% if micropost.user_id == current_user.id && action_name != "show" %>
+  <% if micropost.user_id == current_user.id && controller_name == "users" %>
     <div class="flex">
+      <%= link_to "Show this micropost", micropost, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      <%= link_to 'Edit this micropost', edit_micropost_path(micropost), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    </div>
+  <% elsif micropost.user_id == current_user.id && action_name != "show" %>
+      <div class="flex">
       <%= link_to "Show this micropost", micropost, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
       <%= link_to 'Edit this micropost', edit_micropost_path(micropost), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
     </div>
