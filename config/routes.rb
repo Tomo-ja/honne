@@ -13,9 +13,13 @@ Rails.application.routes.draw do
 
   get '/create_post', to: 'microposts#new'
 
+  post '/comment', to: 'comments#create'
+
 
   resources :users
-  resources :microposts, only:[:show, :new, :edit, :create, :destroy, :update]
+  resources :microposts do
+    resources :comments, only:[:create]
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
