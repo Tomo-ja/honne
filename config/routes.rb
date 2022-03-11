@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :comments
   root 'static_pages#home'
   get '/love', to: 'static_pages#love'
   get '/study', to: 'static_pages#study'
