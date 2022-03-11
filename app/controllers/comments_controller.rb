@@ -1,13 +1,13 @@
 class CommentsController < ApplicationController
 	def create
 		@comment = current_user.comments.build(comment_params)
-		@post = Micropost.find_by(id: params[:id])
+		@post = Micropost.find_by(id: params[:comments][:micropost_id])
 
 		if @comment.save
 			redirect_to @post
 		else
 			puts @comment.errors
-			redirect_to root_url
+			redirect_to @post
 		end
 
 	end

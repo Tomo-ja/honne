@@ -25,7 +25,7 @@
 
   <%= form_with(url: comment_path, scope: :comments, local: true) do |form| %>
     <%= form.text_field :comment, class: "block bg-red-50"%>
-    <% form.hidden_field :micropost_id, value: @micropost.id%>
+    <%= form.hidden_field :micropost_id, :value => @micropost.id%>
     <%= form.submit "add comment" %>
   <% end %>
 <% end %>
