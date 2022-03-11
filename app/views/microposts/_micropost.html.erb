@@ -16,5 +16,16 @@
   <% elsif action_name != "show" %>
     <%= link_to "Show this micropost", micropost, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
   <% end %>
-
 </div>
+
+<% if controller_name == "microposts" && action_name == "show"%>
+  <% @comments.each do |c| %>
+    <%= c.comment%>
+  <% end %>
+
+  <%= form_with(url: comment_path, scope: :comments, local: true) do |form| %>
+    <%= form.text_field :comment, class: "block bg-red-50"%>
+    <%= form.hidden_field :micropost_id, :value => @micropost.id%>
+    <%= form.submit "add comment" %>
+  <% end %>
+<% end %>
